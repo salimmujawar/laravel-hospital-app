@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DoctorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,8 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'redirect']);
+Route::get('/add_doctor_view', [DoctorController::class, 'add_view']);
+Route::post('/post_doctor', [DoctorController::class, 'post']);
 
 Route::middleware([
     'auth:sanctum',
