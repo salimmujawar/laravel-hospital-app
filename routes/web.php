@@ -21,6 +21,8 @@ Route::get('/home', [HomeController::class, 'redirect']);
 Route::get('/add_doctor_view', [DoctorController::class, 'add_view']);
 Route::post('/post_doctor', [DoctorController::class, 'post']);
 Route::post('/appointment', [HomeController::class, 'appointment']);
+Route::get('/myappointment', [HomeController::class, 'myappointment']);
+Route::get('/cancel_appointment/{id}', [HomeController::class, 'cancel']);
 
 Route::middleware([
     'auth:sanctum',
